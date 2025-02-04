@@ -1,0 +1,2866 @@
+Command: /home/runner/./simv +vcs+lic+wait ./simv -l APB_SLAVE_Reports.log
+Chronologic VCS simulator copyright 1991-2023
+Contains Synopsys proprietary information.
+Compiler version U-2023.03-SP2_Full64; Runtime version U-2023.03-SP2_Full64;  Feb  4 01:19 2025
+UVM_INFO /apps/vcsmx/vcs/U-2023.03-SP2//etc/uvm-1.2/src/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2.Synopsys
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test test_case_4...
+UVM_INFO apb_test.sv(19) @ 0: uvm_test_top [Base Test] Build_Phase
+UVM_INFO apb_environment.sv(22) @ 0: uvm_test_top.env_h [Environment] Build_Phase
+UVM_INFO apb_agent.sv(22) @ 0: uvm_test_top.env_h.agnt_h [Agent] Build_Phase
+UVM_INFO apb_driver.sv(24) @ 0: uvm_test_top.env_h.agnt_h.driv_h [Driver] Build_Phase
+UVM_INFO apb_driver.sv(26) @ 0: uvm_test_top.env_h.agnt_h.driv_h [Driver] Virtual Interface Established
+UVM_INFO apb_monitor.sv(27) @ 0: uvm_test_top.env_h.agnt_h.mon_h [Monitor] Build_Phase
+UVM_INFO apb_monitor.sv(29) @ 0: uvm_test_top.env_h.agnt_h.mon_h [Monitor] Virtual Interface Established
+UVM_INFO apb_sequencer.sv(20) @ 0: uvm_test_top.env_h.agnt_h.sequ_h [Sequencer] Build_Phase
+UVM_INFO apb_scoreboard.sv(26) @ 0: uvm_test_top.env_h.scb_h [Scoreboard] Build_Phase
+UVM_INFO apb_agent.sv(30) @ 0: uvm_test_top.env_h.agnt_h [Agent] Connect_Phase
+UVM_INFO apb_environment.sv(31) @ 0: uvm_test_top.env_h [Environment] Connect_Phase
+UVM_INFO /apps/vcsmx/vcs/U-2023.03-SP2//etc/uvm-1.2/src/base/uvm_root.svh(589) @ 0: reporter [UVMTOP] UVM testbench topology:
+------------------------------------------------------------------
+Name                       Type                        Size  Value
+------------------------------------------------------------------
+uvm_test_top               test_case_4                 -     @341 
+  env_h                    apb_env                     -     @356 
+    agnt_h                 apb_agent                   -     @367 
+      driv_h               apb_driver                  -     @407 
+        rsp_port           uvm_analysis_port           -     @426 
+        seq_item_port      uvm_seq_item_pull_port      -     @416 
+      mon_h                apb_monitor                 -     @573 
+        mon2scb            uvm_analysis_port           -     @592 
+      sequ_h               apb_sequencer               -     @436 
+        rsp_export         uvm_analysis_export         -     @445 
+        seq_item_export    uvm_seq_item_pull_imp       -     @563 
+        arbitration_queue  array                       0     -    
+        lock_queue         array                       0     -    
+        num_last_reqs      integral                    32    'd1  
+        num_last_rsps      integral                    32    'd1  
+    cov_h                  coverage                    -     @385 
+      analysis_imp         uvm_analysis_imp            -     @394 
+      mon2cov              uvm_tlm_analysis_fifo #(T)  -     @609 
+        analysis_export    uvm_analysis_imp            -     @658 
+        get_ap             uvm_analysis_port           -     @648 
+        get_peek_export    uvm_get_peek_imp            -     @628 
+        put_ap             uvm_analysis_port           -     @638 
+        put_export         uvm_put_imp                 -     @618 
+    scb_h                  apb_scoreboard              -     @376 
+      mon2scb              uvm_tlm_analysis_fifo #(T)  -     @670 
+        analysis_export    uvm_analysis_imp            -     @719 
+        get_ap             uvm_analysis_port           -     @709 
+        get_peek_export    uvm_get_peek_imp            -     @689 
+        put_ap             uvm_analysis_port           -     @699 
+        put_export         uvm_put_imp                 -     @679 
+------------------------------------------------------------------
+
+UVM_INFO apb_driver.sv(36) @ 0: uvm_test_top.env_h.agnt_h.driv_h [Driver] Run Phase
+UVM_INFO apb_driver.sv(39) @ 0: uvm_test_top.env_h.agnt_h.driv_h [DRIVER RESET] Driver in Reset Phase
+UVM_INFO apb_monitor.sv(40) @ 0: uvm_test_top.env_h.agnt_h.mon_h [Monitor] Run_Phase
+UVM_INFO apb_scoreboard.sv(33) @ 0: uvm_test_top.env_h.scb_h [Scoreboard] Run_Phase
+UVM_INFO apb_test.sv(152) @ 0: uvm_test_top [Test Case 4 Started] 
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+txn_h                          apb_transaction  -     @769                                   
+  name                         string           9     sequence3                              
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'h1                                    
+  pwdata                       integral         32    'h7a                                   
+  pwrite                       integral         1     'h1                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    2                                      
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+-----------------------------------------
+Name       Type             Size  Value  
+-----------------------------------------
+txn_h      apb_transaction  -     @806   
+  name     string           7     MONITOR
+  psel     integral         1     'h0    
+  penable  integral         1     'h0    
+  paddr    integral         32    'h1    
+  pwdata   integral         32    'h7a   
+  pwrite   integral         1     'h1    
+  prdata   integral         32    'h0    
+  pslverr  integral         1     'h0    
+  pready   integral         1     'h0    
+-----------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+txn_h                          apb_transaction  -     @769                                   
+  name                         string           6     DRIVER                                 
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'h1                                    
+  pwdata                       integral         32    'h7a                                   
+  pwrite                       integral         1     'h1                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    2                                      
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_subscriber.sv(55) @ 7: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED] --------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @806      
+  name     string           10    SUBSCRIBER
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'h1       
+  pwdata   integral         32    'h7a      
+  pwrite   integral         1     'h1       
+  prdata   integral         32    'h0       
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+
+UVM_INFO apb_subscriber.sv(56) @ 7: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED IS = ] 85
+--------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @806      
+  name     string           10    SCOREBOARD
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'h1       
+  pwdata   integral         32    'h7a      
+  pwrite   integral         1     'h1       
+  prdata   integral         32    'h0       
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+txn_h                          apb_transaction  -     @769                                   
+  name                         string           9     sequence3                              
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'hb                                    
+  pwdata                       integral         32    'ha3                                   
+  pwrite                       integral         1     'h1                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    7                                      
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_property.sv(58) @ 7: reporter [ASSERTION PASSED for Handshake penable pready] 
+UVM_INFO apb_property.sv(34) @ 7: reporter [ASSERTION PASSED setup_access] 
+UVM_INFO apb_property.sv(46) @ 9: reporter [ASSERTION PASSED access_idle] 
+-----------------------------------------
+Name       Type             Size  Value  
+-----------------------------------------
+txn_h      apb_transaction  -     @829   
+  name     string           7     MONITOR
+  psel     integral         1     'h0    
+  penable  integral         1     'h0    
+  paddr    integral         32    'hb    
+  pwdata   integral         32    'ha3   
+  pwrite   integral         1     'h1    
+  prdata   integral         32    'h0    
+  pslverr  integral         1     'h0    
+  pready   integral         1     'h0    
+-----------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+txn_h                          apb_transaction  -     @769                                   
+  name                         string           6     DRIVER                                 
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'hb                                    
+  pwdata                       integral         32    'ha3                                   
+  pwrite                       integral         1     'h1                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    7                                      
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_subscriber.sv(55) @ 13: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED] --------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @829      
+  name     string           10    SUBSCRIBER
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'hb       
+  pwdata   integral         32    'ha3      
+  pwrite   integral         1     'h1       
+  prdata   integral         32    'h0       
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+
+UVM_INFO apb_subscriber.sv(56) @ 13: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED IS = ] 92
+--------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @829      
+  name     string           10    SCOREBOARD
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'hb       
+  pwdata   integral         32    'ha3      
+  pwrite   integral         1     'h1       
+  prdata   integral         32    'h0       
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+txn_h                          apb_transaction  -     @769                                   
+  name                         string           9     sequence3                              
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'h3                                    
+  pwdata                       integral         32    'h4e                                   
+  pwrite                       integral         1     'h1                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    13                                     
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_property.sv(58) @ 13: reporter [ASSERTION PASSED for Handshake penable pready] 
+UVM_INFO apb_property.sv(34) @ 13: reporter [ASSERTION PASSED setup_access] 
+UVM_INFO apb_property.sv(46) @ 15: reporter [ASSERTION PASSED access_idle] 
+-----------------------------------------
+Name       Type             Size  Value  
+-----------------------------------------
+txn_h      apb_transaction  -     @851   
+  name     string           7     MONITOR
+  psel     integral         1     'h0    
+  penable  integral         1     'h0    
+  paddr    integral         32    'h3    
+  pwdata   integral         32    'h4e   
+  pwrite   integral         1     'h1    
+  prdata   integral         32    'h0    
+  pslverr  integral         1     'h0    
+  pready   integral         1     'h0    
+-----------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+txn_h                          apb_transaction  -     @769                                   
+  name                         string           6     DRIVER                                 
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'h3                                    
+  pwdata                       integral         32    'h4e                                   
+  pwrite                       integral         1     'h1                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    13                                     
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_subscriber.sv(55) @ 19: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED] --------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @851      
+  name     string           10    SUBSCRIBER
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'h3       
+  pwdata   integral         32    'h4e      
+  pwrite   integral         1     'h1       
+  prdata   integral         32    'h0       
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+
+UVM_INFO apb_subscriber.sv(56) @ 19: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED IS = ] 92
+--------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @851      
+  name     string           10    SCOREBOARD
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'h3       
+  pwdata   integral         32    'h4e      
+  pwrite   integral         1     'h1       
+  prdata   integral         32    'h0       
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+txn_h                          apb_transaction  -     @769                                   
+  name                         string           9     sequence3                              
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'h8                                    
+  pwdata                       integral         32    'h4c                                   
+  pwrite                       integral         1     'h1                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    19                                     
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_property.sv(58) @ 19: reporter [ASSERTION PASSED for Handshake penable pready] 
+UVM_INFO apb_property.sv(34) @ 19: reporter [ASSERTION PASSED setup_access] 
+UVM_INFO apb_property.sv(46) @ 21: reporter [ASSERTION PASSED access_idle] 
+-----------------------------------------
+Name       Type             Size  Value  
+-----------------------------------------
+txn_h      apb_transaction  -     @873   
+  name     string           7     MONITOR
+  psel     integral         1     'h0    
+  penable  integral         1     'h0    
+  paddr    integral         32    'h8    
+  pwdata   integral         32    'h4c   
+  pwrite   integral         1     'h1    
+  prdata   integral         32    'h0    
+  pslverr  integral         1     'h0    
+  pready   integral         1     'h0    
+-----------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+txn_h                          apb_transaction  -     @769                                   
+  name                         string           6     DRIVER                                 
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'h8                                    
+  pwdata                       integral         32    'h4c                                   
+  pwrite                       integral         1     'h1                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    19                                     
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_subscriber.sv(55) @ 25: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED] --------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @873      
+  name     string           10    SUBSCRIBER
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'h8       
+  pwdata   integral         32    'h4c      
+  pwrite   integral         1     'h1       
+  prdata   integral         32    'h0       
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+
+UVM_INFO apb_subscriber.sv(56) @ 25: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED IS = ] 92
+--------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @873      
+  name     string           10    SCOREBOARD
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'h8       
+  pwdata   integral         32    'h4c      
+  pwrite   integral         1     'h1       
+  prdata   integral         32    'h0       
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+txn_h                          apb_transaction  -     @769                                   
+  name                         string           9     sequence3                              
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'h7                                    
+  pwdata                       integral         32    'hac                                   
+  pwrite                       integral         1     'h1                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    25                                     
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_property.sv(58) @ 25: reporter [ASSERTION PASSED for Handshake penable pready] 
+UVM_INFO apb_property.sv(34) @ 25: reporter [ASSERTION PASSED setup_access] 
+UVM_INFO apb_property.sv(46) @ 27: reporter [ASSERTION PASSED access_idle] 
+-----------------------------------------
+Name       Type             Size  Value  
+-----------------------------------------
+txn_h      apb_transaction  -     @895   
+  name     string           7     MONITOR
+  psel     integral         1     'h0    
+  penable  integral         1     'h0    
+  paddr    integral         32    'h7    
+  pwdata   integral         32    'hac   
+  pwrite   integral         1     'h1    
+  prdata   integral         32    'h0    
+  pslverr  integral         1     'h0    
+  pready   integral         1     'h0    
+-----------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+txn_h                          apb_transaction  -     @769                                   
+  name                         string           6     DRIVER                                 
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'h7                                    
+  pwdata                       integral         32    'hac                                   
+  pwrite                       integral         1     'h1                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    25                                     
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_subscriber.sv(55) @ 31: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED] --------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @895      
+  name     string           10    SUBSCRIBER
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'h7       
+  pwdata   integral         32    'hac      
+  pwrite   integral         1     'h1       
+  prdata   integral         32    'h0       
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+
+UVM_INFO apb_subscriber.sv(56) @ 31: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED IS = ] 92
+--------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @895      
+  name     string           10    SCOREBOARD
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'h7       
+  pwdata   integral         32    'hac      
+  pwrite   integral         1     'h1       
+  prdata   integral         32    'h0       
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+txn_h                          apb_transaction  -     @769                                   
+  name                         string           9     sequence3                              
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'h6                                    
+  pwdata                       integral         32    'he1                                   
+  pwrite                       integral         1     'h1                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    31                                     
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_property.sv(58) @ 31: reporter [ASSERTION PASSED for Handshake penable pready] 
+UVM_INFO apb_property.sv(34) @ 31: reporter [ASSERTION PASSED setup_access] 
+UVM_INFO apb_property.sv(46) @ 33: reporter [ASSERTION PASSED access_idle] 
+-----------------------------------------
+Name       Type             Size  Value  
+-----------------------------------------
+txn_h      apb_transaction  -     @917   
+  name     string           7     MONITOR
+  psel     integral         1     'h0    
+  penable  integral         1     'h0    
+  paddr    integral         32    'h6    
+  pwdata   integral         32    'he1   
+  pwrite   integral         1     'h1    
+  prdata   integral         32    'h0    
+  pslverr  integral         1     'h0    
+  pready   integral         1     'h0    
+-----------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+txn_h                          apb_transaction  -     @769                                   
+  name                         string           6     DRIVER                                 
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'h6                                    
+  pwdata                       integral         32    'he1                                   
+  pwrite                       integral         1     'h1                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    31                                     
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_subscriber.sv(55) @ 37: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED] --------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @917      
+  name     string           10    SUBSCRIBER
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'h6       
+  pwdata   integral         32    'he1      
+  pwrite   integral         1     'h1       
+  prdata   integral         32    'h0       
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+
+UVM_INFO apb_subscriber.sv(56) @ 37: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED IS = ] 92
+--------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @917      
+  name     string           10    SCOREBOARD
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'h6       
+  pwdata   integral         32    'he1      
+  pwrite   integral         1     'h1       
+  prdata   integral         32    'h0       
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+txn_h                          apb_transaction  -     @769                                   
+  name                         string           9     sequence3                              
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'hc                                    
+  pwdata                       integral         32    'h47                                   
+  pwrite                       integral         1     'h1                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    37                                     
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_property.sv(58) @ 37: reporter [ASSERTION PASSED for Handshake penable pready] 
+UVM_INFO apb_property.sv(34) @ 37: reporter [ASSERTION PASSED setup_access] 
+UVM_INFO apb_property.sv(46) @ 39: reporter [ASSERTION PASSED access_idle] 
+-----------------------------------------
+Name       Type             Size  Value  
+-----------------------------------------
+txn_h      apb_transaction  -     @939   
+  name     string           7     MONITOR
+  psel     integral         1     'h0    
+  penable  integral         1     'h0    
+  paddr    integral         32    'hc    
+  pwdata   integral         32    'h47   
+  pwrite   integral         1     'h1    
+  prdata   integral         32    'h0    
+  pslverr  integral         1     'h0    
+  pready   integral         1     'h0    
+-----------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+txn_h                          apb_transaction  -     @769                                   
+  name                         string           6     DRIVER                                 
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'hc                                    
+  pwdata                       integral         32    'h47                                   
+  pwrite                       integral         1     'h1                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    37                                     
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_subscriber.sv(55) @ 43: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED] --------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @939      
+  name     string           10    SUBSCRIBER
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'hc       
+  pwdata   integral         32    'h47      
+  pwrite   integral         1     'h1       
+  prdata   integral         32    'h0       
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+
+UVM_INFO apb_subscriber.sv(56) @ 43: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED IS = ] 92
+--------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @939      
+  name     string           10    SCOREBOARD
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'hc       
+  pwdata   integral         32    'h47      
+  pwrite   integral         1     'h1       
+  prdata   integral         32    'h0       
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+txn_h                          apb_transaction  -     @769                                   
+  name                         string           9     sequence3                              
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'he                                    
+  pwdata                       integral         32    'h78                                   
+  pwrite                       integral         1     'h1                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    43                                     
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_property.sv(58) @ 43: reporter [ASSERTION PASSED for Handshake penable pready] 
+UVM_INFO apb_property.sv(34) @ 43: reporter [ASSERTION PASSED setup_access] 
+UVM_INFO apb_property.sv(46) @ 45: reporter [ASSERTION PASSED access_idle] 
+-----------------------------------------
+Name       Type             Size  Value  
+-----------------------------------------
+txn_h      apb_transaction  -     @961   
+  name     string           7     MONITOR
+  psel     integral         1     'h0    
+  penable  integral         1     'h0    
+  paddr    integral         32    'he    
+  pwdata   integral         32    'h78   
+  pwrite   integral         1     'h1    
+  prdata   integral         32    'h0    
+  pslverr  integral         1     'h0    
+  pready   integral         1     'h0    
+-----------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+txn_h                          apb_transaction  -     @769                                   
+  name                         string           6     DRIVER                                 
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'he                                    
+  pwdata                       integral         32    'h78                                   
+  pwrite                       integral         1     'h1                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    43                                     
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_subscriber.sv(55) @ 49: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED] --------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @961      
+  name     string           10    SUBSCRIBER
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'he       
+  pwdata   integral         32    'h78      
+  pwrite   integral         1     'h1       
+  prdata   integral         32    'h0       
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+
+UVM_INFO apb_subscriber.sv(56) @ 49: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED IS = ] 92
+--------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @961      
+  name     string           10    SCOREBOARD
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'he       
+  pwdata   integral         32    'h78      
+  pwrite   integral         1     'h1       
+  prdata   integral         32    'h0       
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+txn_h                          apb_transaction  -     @769                                   
+  name                         string           9     sequence3                              
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'h5                                    
+  pwdata                       integral         32    'hea                                   
+  pwrite                       integral         1     'h1                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    49                                     
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_property.sv(58) @ 49: reporter [ASSERTION PASSED for Handshake penable pready] 
+UVM_INFO apb_property.sv(34) @ 49: reporter [ASSERTION PASSED setup_access] 
+UVM_INFO apb_property.sv(46) @ 51: reporter [ASSERTION PASSED access_idle] 
+-----------------------------------------
+Name       Type             Size  Value  
+-----------------------------------------
+txn_h      apb_transaction  -     @983   
+  name     string           7     MONITOR
+  psel     integral         1     'h0    
+  penable  integral         1     'h0    
+  paddr    integral         32    'h5    
+  pwdata   integral         32    'hea   
+  pwrite   integral         1     'h1    
+  prdata   integral         32    'h0    
+  pslverr  integral         1     'h0    
+  pready   integral         1     'h0    
+-----------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+txn_h                          apb_transaction  -     @769                                   
+  name                         string           6     DRIVER                                 
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'h5                                    
+  pwdata                       integral         32    'hea                                   
+  pwrite                       integral         1     'h1                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    49                                     
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_subscriber.sv(55) @ 55: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED] --------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @983      
+  name     string           10    SUBSCRIBER
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'h5       
+  pwdata   integral         32    'hea      
+  pwrite   integral         1     'h1       
+  prdata   integral         32    'h0       
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+
+UVM_INFO apb_subscriber.sv(56) @ 55: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED IS = ] 92
+--------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @983      
+  name     string           10    SCOREBOARD
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'h5       
+  pwdata   integral         32    'hea      
+  pwrite   integral         1     'h1       
+  prdata   integral         32    'h0       
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+txn_h                          apb_transaction  -     @769                                   
+  name                         string           9     sequence3                              
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'h0                                    
+  pwdata                       integral         32    'h5f                                   
+  pwrite                       integral         1     'h1                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    55                                     
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_property.sv(58) @ 55: reporter [ASSERTION PASSED for Handshake penable pready] 
+UVM_INFO apb_property.sv(34) @ 55: reporter [ASSERTION PASSED setup_access] 
+UVM_INFO apb_property.sv(46) @ 57: reporter [ASSERTION PASSED access_idle] 
+-----------------------------------------
+Name       Type             Size  Value  
+-----------------------------------------
+txn_h      apb_transaction  -     @1005  
+  name     string           7     MONITOR
+  psel     integral         1     'h0    
+  penable  integral         1     'h0    
+  paddr    integral         32    'h0    
+  pwdata   integral         32    'h5f   
+  pwrite   integral         1     'h1    
+  prdata   integral         32    'h0    
+  pslverr  integral         1     'h0    
+  pready   integral         1     'h0    
+-----------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+txn_h                          apb_transaction  -     @769                                   
+  name                         string           6     DRIVER                                 
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'h0                                    
+  pwdata                       integral         32    'h5f                                   
+  pwrite                       integral         1     'h1                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    55                                     
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_subscriber.sv(55) @ 61: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED] --------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1005     
+  name     string           10    SUBSCRIBER
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'h0       
+  pwdata   integral         32    'h5f      
+  pwrite   integral         1     'h1       
+  prdata   integral         32    'h0       
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+
+UVM_INFO apb_subscriber.sv(56) @ 61: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED IS = ] 92
+--------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1005     
+  name     string           10    SCOREBOARD
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'h0       
+  pwdata   integral         32    'h5f      
+  pwrite   integral         1     'h1       
+  prdata   integral         32    'h0       
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+txn_h                          apb_transaction  -     @769                                   
+  name                         string           9     sequence3                              
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'ha                                    
+  pwdata                       integral         32    'hd9                                   
+  pwrite                       integral         1     'h1                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    61                                     
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_property.sv(58) @ 61: reporter [ASSERTION PASSED for Handshake penable pready] 
+UVM_INFO apb_property.sv(34) @ 61: reporter [ASSERTION PASSED setup_access] 
+UVM_INFO apb_property.sv(46) @ 63: reporter [ASSERTION PASSED access_idle] 
+-----------------------------------------
+Name       Type             Size  Value  
+-----------------------------------------
+txn_h      apb_transaction  -     @1027  
+  name     string           7     MONITOR
+  psel     integral         1     'h0    
+  penable  integral         1     'h0    
+  paddr    integral         32    'ha    
+  pwdata   integral         32    'hd9   
+  pwrite   integral         1     'h1    
+  prdata   integral         32    'h0    
+  pslverr  integral         1     'h0    
+  pready   integral         1     'h0    
+-----------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+txn_h                          apb_transaction  -     @769                                   
+  name                         string           6     DRIVER                                 
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'ha                                    
+  pwdata                       integral         32    'hd9                                   
+  pwrite                       integral         1     'h1                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    61                                     
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_subscriber.sv(55) @ 67: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED] --------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1027     
+  name     string           10    SUBSCRIBER
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'ha       
+  pwdata   integral         32    'hd9      
+  pwrite   integral         1     'h1       
+  prdata   integral         32    'h0       
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+
+UVM_INFO apb_subscriber.sv(56) @ 67: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED IS = ] 92
+--------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1027     
+  name     string           10    SCOREBOARD
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'ha       
+  pwdata   integral         32    'hd9      
+  pwrite   integral         1     'h1       
+  prdata   integral         32    'h0       
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+txn_h                          apb_transaction  -     @769                                   
+  name                         string           9     sequence3                              
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'hd                                    
+  pwdata                       integral         32    'hb7                                   
+  pwrite                       integral         1     'h1                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    67                                     
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_property.sv(58) @ 67: reporter [ASSERTION PASSED for Handshake penable pready] 
+UVM_INFO apb_property.sv(34) @ 67: reporter [ASSERTION PASSED setup_access] 
+UVM_INFO apb_property.sv(46) @ 69: reporter [ASSERTION PASSED access_idle] 
+-----------------------------------------
+Name       Type             Size  Value  
+-----------------------------------------
+txn_h      apb_transaction  -     @1049  
+  name     string           7     MONITOR
+  psel     integral         1     'h0    
+  penable  integral         1     'h0    
+  paddr    integral         32    'hd    
+  pwdata   integral         32    'hb7   
+  pwrite   integral         1     'h1    
+  prdata   integral         32    'h0    
+  pslverr  integral         1     'h0    
+  pready   integral         1     'h0    
+-----------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+txn_h                          apb_transaction  -     @769                                   
+  name                         string           6     DRIVER                                 
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'hd                                    
+  pwdata                       integral         32    'hb7                                   
+  pwrite                       integral         1     'h1                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    67                                     
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_subscriber.sv(55) @ 73: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED] --------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1049     
+  name     string           10    SUBSCRIBER
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'hd       
+  pwdata   integral         32    'hb7      
+  pwrite   integral         1     'h1       
+  prdata   integral         32    'h0       
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+
+UVM_INFO apb_subscriber.sv(56) @ 73: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED IS = ] 92
+--------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1049     
+  name     string           10    SCOREBOARD
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'hd       
+  pwdata   integral         32    'hb7      
+  pwrite   integral         1     'h1       
+  prdata   integral         32    'h0       
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+txn_h                          apb_transaction  -     @769                                   
+  name                         string           9     sequence3                              
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'hf                                    
+  pwdata                       integral         32    'h20                                   
+  pwrite                       integral         1     'h1                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    73                                     
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_property.sv(58) @ 73: reporter [ASSERTION PASSED for Handshake penable pready] 
+UVM_INFO apb_property.sv(34) @ 73: reporter [ASSERTION PASSED setup_access] 
+UVM_INFO apb_property.sv(46) @ 75: reporter [ASSERTION PASSED access_idle] 
+-----------------------------------------
+Name       Type             Size  Value  
+-----------------------------------------
+txn_h      apb_transaction  -     @1071  
+  name     string           7     MONITOR
+  psel     integral         1     'h0    
+  penable  integral         1     'h0    
+  paddr    integral         32    'hf    
+  pwdata   integral         32    'h20   
+  pwrite   integral         1     'h1    
+  prdata   integral         32    'h0    
+  pslverr  integral         1     'h0    
+  pready   integral         1     'h0    
+-----------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+txn_h                          apb_transaction  -     @769                                   
+  name                         string           6     DRIVER                                 
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'hf                                    
+  pwdata                       integral         32    'h20                                   
+  pwrite                       integral         1     'h1                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    73                                     
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_subscriber.sv(55) @ 79: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED] --------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1071     
+  name     string           10    SUBSCRIBER
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'hf       
+  pwdata   integral         32    'h20      
+  pwrite   integral         1     'h1       
+  prdata   integral         32    'h0       
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+
+UVM_INFO apb_subscriber.sv(56) @ 79: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED IS = ] 92
+--------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1071     
+  name     string           10    SCOREBOARD
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'hf       
+  pwdata   integral         32    'h20      
+  pwrite   integral         1     'h1       
+  prdata   integral         32    'h0       
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+txn_h                          apb_transaction  -     @769                                   
+  name                         string           9     sequence3                              
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'h9                                    
+  pwdata                       integral         32    'h96                                   
+  pwrite                       integral         1     'h1                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    79                                     
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_property.sv(58) @ 79: reporter [ASSERTION PASSED for Handshake penable pready] 
+UVM_INFO apb_property.sv(34) @ 79: reporter [ASSERTION PASSED setup_access] 
+UVM_INFO apb_property.sv(46) @ 81: reporter [ASSERTION PASSED access_idle] 
+-----------------------------------------
+Name       Type             Size  Value  
+-----------------------------------------
+txn_h      apb_transaction  -     @1093  
+  name     string           7     MONITOR
+  psel     integral         1     'h0    
+  penable  integral         1     'h0    
+  paddr    integral         32    'h9    
+  pwdata   integral         32    'h96   
+  pwrite   integral         1     'h1    
+  prdata   integral         32    'h0    
+  pslverr  integral         1     'h0    
+  pready   integral         1     'h0    
+-----------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+txn_h                          apb_transaction  -     @769                                   
+  name                         string           6     DRIVER                                 
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'h9                                    
+  pwdata                       integral         32    'h96                                   
+  pwrite                       integral         1     'h1                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    79                                     
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_subscriber.sv(55) @ 85: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED] --------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1093     
+  name     string           10    SUBSCRIBER
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'h9       
+  pwdata   integral         32    'h96      
+  pwrite   integral         1     'h1       
+  prdata   integral         32    'h0       
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+
+UVM_INFO apb_subscriber.sv(56) @ 85: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED IS = ] 92
+--------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1093     
+  name     string           10    SCOREBOARD
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'h9       
+  pwdata   integral         32    'h96      
+  pwrite   integral         1     'h1       
+  prdata   integral         32    'h0       
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+txn_h                          apb_transaction  -     @769                                   
+  name                         string           9     sequence3                              
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'h4                                    
+  pwdata                       integral         32    'h63                                   
+  pwrite                       integral         1     'h1                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    85                                     
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_property.sv(58) @ 85: reporter [ASSERTION PASSED for Handshake penable pready] 
+UVM_INFO apb_property.sv(34) @ 85: reporter [ASSERTION PASSED setup_access] 
+UVM_INFO apb_property.sv(46) @ 87: reporter [ASSERTION PASSED access_idle] 
+-----------------------------------------
+Name       Type             Size  Value  
+-----------------------------------------
+txn_h      apb_transaction  -     @1115  
+  name     string           7     MONITOR
+  psel     integral         1     'h0    
+  penable  integral         1     'h0    
+  paddr    integral         32    'h4    
+  pwdata   integral         32    'h63   
+  pwrite   integral         1     'h1    
+  prdata   integral         32    'h0    
+  pslverr  integral         1     'h0    
+  pready   integral         1     'h0    
+-----------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+txn_h                          apb_transaction  -     @769                                   
+  name                         string           6     DRIVER                                 
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'h4                                    
+  pwdata                       integral         32    'h63                                   
+  pwrite                       integral         1     'h1                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    85                                     
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_subscriber.sv(55) @ 91: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED] --------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1115     
+  name     string           10    SUBSCRIBER
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'h4       
+  pwdata   integral         32    'h63      
+  pwrite   integral         1     'h1       
+  prdata   integral         32    'h0       
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+
+UVM_INFO apb_subscriber.sv(56) @ 91: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED IS = ] 92
+--------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1115     
+  name     string           10    SCOREBOARD
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'h4       
+  pwdata   integral         32    'h63      
+  pwrite   integral         1     'h1       
+  prdata   integral         32    'h0       
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+txn_h                          apb_transaction  -     @769                                   
+  name                         string           9     sequence3                              
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'h2                                    
+  pwdata                       integral         32    'h56                                   
+  pwrite                       integral         1     'h1                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    91                                     
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_property.sv(58) @ 91: reporter [ASSERTION PASSED for Handshake penable pready] 
+UVM_INFO apb_property.sv(34) @ 91: reporter [ASSERTION PASSED setup_access] 
+UVM_INFO apb_property.sv(46) @ 93: reporter [ASSERTION PASSED access_idle] 
+-----------------------------------------
+Name       Type             Size  Value  
+-----------------------------------------
+txn_h      apb_transaction  -     @1137  
+  name     string           7     MONITOR
+  psel     integral         1     'h0    
+  penable  integral         1     'h0    
+  paddr    integral         32    'h2    
+  pwdata   integral         32    'h56   
+  pwrite   integral         1     'h1    
+  prdata   integral         32    'h0    
+  pslverr  integral         1     'h0    
+  pready   integral         1     'h0    
+-----------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+txn_h                          apb_transaction  -     @769                                   
+  name                         string           6     DRIVER                                 
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'h2                                    
+  pwdata                       integral         32    'h56                                   
+  pwrite                       integral         1     'h1                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    91                                     
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_subscriber.sv(55) @ 97: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED] --------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1137     
+  name     string           10    SUBSCRIBER
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'h2       
+  pwdata   integral         32    'h56      
+  pwrite   integral         1     'h1       
+  prdata   integral         32    'h0       
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+
+UVM_INFO apb_subscriber.sv(56) @ 97: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED IS = ] 92
+--------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1137     
+  name     string           10    SCOREBOARD
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'h2       
+  pwdata   integral         32    'h56      
+  pwrite   integral         1     'h1       
+  prdata   integral         32    'h0       
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+sequence4                      apb_transaction  -     @1145                                  
+  name                         string           10    SEQUENCE_4                             
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'h7                                    
+  pwdata                       integral         32    'h21                                   
+  pwrite                       integral         1     'h0                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    97                                     
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_property.sv(58) @ 97: reporter [ASSERTION PASSED for Handshake penable pready] 
+UVM_INFO apb_property.sv(34) @ 97: reporter [ASSERTION PASSED setup_access] 
+UVM_INFO apb_property.sv(46) @ 99: reporter [ASSERTION PASSED access_idle] 
+-----------------------------------------
+Name       Type             Size  Value  
+-----------------------------------------
+txn_h      apb_transaction  -     @1163  
+  name     string           7     MONITOR
+  psel     integral         1     'h0    
+  penable  integral         1     'h0    
+  paddr    integral         32    'h7    
+  pwdata   integral         32    'h0    
+  pwrite   integral         1     'h0    
+  prdata   integral         32    'hac   
+  pslverr  integral         1     'h0    
+  pready   integral         1     'h0    
+-----------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+sequence4                      apb_transaction  -     @1145                                  
+  name                         string           6     DRIVER                                 
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'h7                                    
+  pwdata                       integral         32    'h21                                   
+  pwrite                       integral         1     'h0                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    97                                     
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_subscriber.sv(55) @ 103: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED] --------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1163     
+  name     string           10    SUBSCRIBER
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'h7       
+  pwdata   integral         32    'h0       
+  pwrite   integral         1     'h0       
+  prdata   integral         32    'hac      
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+
+UVM_INFO apb_subscriber.sv(56) @ 103: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED IS = ] 92
+--------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1163     
+  name     string           10    SCOREBOARD
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'h7       
+  pwdata   integral         32    'h0       
+  pwrite   integral         1     'h0       
+  prdata   integral         32    'hac      
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+UVM_INFO apb_scoreboard.sv(51) @ 103: uvm_test_top.env_h.scb_h [Transaction Pass] 
+UVM_INFO apb_scoreboard.sv(43) @ 103: uvm_test_top.env_h.scb_h [WRITE] DATA = '{0x0:95, 0x1:122, 0x2:86, 0x3:78, 0x4:99, 0x5:234, 0x6:225, 0x8:76, 0x9:150, 0xa:217, 0xb:163, 0xc:71, 0xd:183, 0xe:120, 0xf:32} 
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+sequence4                      apb_transaction  -     @1175                                  
+  name                         string           10    SEQUENCE_4                             
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'ha                                    
+  pwdata                       integral         32    'hdd                                   
+  pwrite                       integral         1     'h0                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    103                                    
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_property.sv(58) @ 103: reporter [ASSERTION PASSED for Handshake penable pready] 
+UVM_INFO apb_property.sv(34) @ 103: reporter [ASSERTION PASSED setup_access] 
+UVM_INFO apb_property.sv(46) @ 105: reporter [ASSERTION PASSED access_idle] 
+-----------------------------------------
+Name       Type             Size  Value  
+-----------------------------------------
+txn_h      apb_transaction  -     @1193  
+  name     string           7     MONITOR
+  psel     integral         1     'h0    
+  penable  integral         1     'h0    
+  paddr    integral         32    'ha    
+  pwdata   integral         32    'h0    
+  pwrite   integral         1     'h0    
+  prdata   integral         32    'hd9   
+  pslverr  integral         1     'h0    
+  pready   integral         1     'h0    
+-----------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+sequence4                      apb_transaction  -     @1175                                  
+  name                         string           6     DRIVER                                 
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'ha                                    
+  pwdata                       integral         32    'hdd                                   
+  pwrite                       integral         1     'h0                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    103                                    
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_subscriber.sv(55) @ 109: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED] --------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1193     
+  name     string           10    SUBSCRIBER
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'ha       
+  pwdata   integral         32    'h0       
+  pwrite   integral         1     'h0       
+  prdata   integral         32    'hd9      
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+
+UVM_INFO apb_subscriber.sv(56) @ 109: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED IS = ] 92
+--------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1193     
+  name     string           10    SCOREBOARD
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'ha       
+  pwdata   integral         32    'h0       
+  pwrite   integral         1     'h0       
+  prdata   integral         32    'hd9      
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+UVM_INFO apb_scoreboard.sv(51) @ 109: uvm_test_top.env_h.scb_h [Transaction Pass] 
+UVM_INFO apb_scoreboard.sv(43) @ 109: uvm_test_top.env_h.scb_h [WRITE] DATA = '{0x0:95, 0x1:122, 0x2:86, 0x3:78, 0x4:99, 0x5:234, 0x6:225, 0x8:76, 0x9:150, 0xb:163, 0xc:71, 0xd:183, 0xe:120, 0xf:32} 
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+sequence4                      apb_transaction  -     @1205                                  
+  name                         string           10    SEQUENCE_4                             
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'h6                                    
+  pwdata                       integral         32    'h90                                   
+  pwrite                       integral         1     'h0                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    109                                    
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_property.sv(58) @ 109: reporter [ASSERTION PASSED for Handshake penable pready] 
+UVM_INFO apb_property.sv(34) @ 109: reporter [ASSERTION PASSED setup_access] 
+UVM_INFO apb_property.sv(46) @ 111: reporter [ASSERTION PASSED access_idle] 
+-----------------------------------------
+Name       Type             Size  Value  
+-----------------------------------------
+txn_h      apb_transaction  -     @1223  
+  name     string           7     MONITOR
+  psel     integral         1     'h0    
+  penable  integral         1     'h0    
+  paddr    integral         32    'h6    
+  pwdata   integral         32    'h0    
+  pwrite   integral         1     'h0    
+  prdata   integral         32    'he1   
+  pslverr  integral         1     'h0    
+  pready   integral         1     'h0    
+-----------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+sequence4                      apb_transaction  -     @1205                                  
+  name                         string           6     DRIVER                                 
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'h6                                    
+  pwdata                       integral         32    'h90                                   
+  pwrite                       integral         1     'h0                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    109                                    
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_subscriber.sv(55) @ 115: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED] --------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1223     
+  name     string           10    SUBSCRIBER
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'h6       
+  pwdata   integral         32    'h0       
+  pwrite   integral         1     'h0       
+  prdata   integral         32    'he1      
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+
+UVM_INFO apb_subscriber.sv(56) @ 115: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED IS = ] 92
+--------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1223     
+  name     string           10    SCOREBOARD
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'h6       
+  pwdata   integral         32    'h0       
+  pwrite   integral         1     'h0       
+  prdata   integral         32    'he1      
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+UVM_INFO apb_scoreboard.sv(51) @ 115: uvm_test_top.env_h.scb_h [Transaction Pass] 
+UVM_INFO apb_scoreboard.sv(43) @ 115: uvm_test_top.env_h.scb_h [WRITE] DATA = '{0x0:95, 0x1:122, 0x2:86, 0x3:78, 0x4:99, 0x5:234, 0x8:76, 0x9:150, 0xb:163, 0xc:71, 0xd:183, 0xe:120, 0xf:32} 
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+sequence4                      apb_transaction  -     @1235                                  
+  name                         string           10    SEQUENCE_4                             
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'he                                    
+  pwdata                       integral         32    'hdf                                   
+  pwrite                       integral         1     'h0                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    115                                    
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_property.sv(58) @ 115: reporter [ASSERTION PASSED for Handshake penable pready] 
+UVM_INFO apb_property.sv(34) @ 115: reporter [ASSERTION PASSED setup_access] 
+UVM_INFO apb_property.sv(46) @ 117: reporter [ASSERTION PASSED access_idle] 
+-----------------------------------------
+Name       Type             Size  Value  
+-----------------------------------------
+txn_h      apb_transaction  -     @1253  
+  name     string           7     MONITOR
+  psel     integral         1     'h0    
+  penable  integral         1     'h0    
+  paddr    integral         32    'he    
+  pwdata   integral         32    'h0    
+  pwrite   integral         1     'h0    
+  prdata   integral         32    'h78   
+  pslverr  integral         1     'h0    
+  pready   integral         1     'h0    
+-----------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+sequence4                      apb_transaction  -     @1235                                  
+  name                         string           6     DRIVER                                 
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'he                                    
+  pwdata                       integral         32    'hdf                                   
+  pwrite                       integral         1     'h0                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    115                                    
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_subscriber.sv(55) @ 121: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED] --------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1253     
+  name     string           10    SUBSCRIBER
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'he       
+  pwdata   integral         32    'h0       
+  pwrite   integral         1     'h0       
+  prdata   integral         32    'h78      
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+
+UVM_INFO apb_subscriber.sv(56) @ 121: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED IS = ] 92
+--------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1253     
+  name     string           10    SCOREBOARD
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'he       
+  pwdata   integral         32    'h0       
+  pwrite   integral         1     'h0       
+  prdata   integral         32    'h78      
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+UVM_INFO apb_scoreboard.sv(51) @ 121: uvm_test_top.env_h.scb_h [Transaction Pass] 
+UVM_INFO apb_scoreboard.sv(43) @ 121: uvm_test_top.env_h.scb_h [WRITE] DATA = '{0x0:95, 0x1:122, 0x2:86, 0x3:78, 0x4:99, 0x5:234, 0x8:76, 0x9:150, 0xb:163, 0xc:71, 0xd:183, 0xf:32} 
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+sequence4                      apb_transaction  -     @1265                                  
+  name                         string           10    SEQUENCE_4                             
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'hd                                    
+  pwdata                       integral         32    'h1a                                   
+  pwrite                       integral         1     'h0                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    121                                    
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_property.sv(58) @ 121: reporter [ASSERTION PASSED for Handshake penable pready] 
+UVM_INFO apb_property.sv(34) @ 121: reporter [ASSERTION PASSED setup_access] 
+UVM_INFO apb_property.sv(46) @ 123: reporter [ASSERTION PASSED access_idle] 
+-----------------------------------------
+Name       Type             Size  Value  
+-----------------------------------------
+txn_h      apb_transaction  -     @1283  
+  name     string           7     MONITOR
+  psel     integral         1     'h0    
+  penable  integral         1     'h0    
+  paddr    integral         32    'hd    
+  pwdata   integral         32    'h0    
+  pwrite   integral         1     'h0    
+  prdata   integral         32    'hb7   
+  pslverr  integral         1     'h0    
+  pready   integral         1     'h0    
+-----------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+sequence4                      apb_transaction  -     @1265                                  
+  name                         string           6     DRIVER                                 
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'hd                                    
+  pwdata                       integral         32    'h1a                                   
+  pwrite                       integral         1     'h0                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    121                                    
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_subscriber.sv(55) @ 127: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED] --------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1283     
+  name     string           10    SUBSCRIBER
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'hd       
+  pwdata   integral         32    'h0       
+  pwrite   integral         1     'h0       
+  prdata   integral         32    'hb7      
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+
+UVM_INFO apb_subscriber.sv(56) @ 127: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED IS = ] 92
+--------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1283     
+  name     string           10    SCOREBOARD
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'hd       
+  pwdata   integral         32    'h0       
+  pwrite   integral         1     'h0       
+  prdata   integral         32    'hb7      
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+UVM_INFO apb_scoreboard.sv(51) @ 127: uvm_test_top.env_h.scb_h [Transaction Pass] 
+UVM_INFO apb_scoreboard.sv(43) @ 127: uvm_test_top.env_h.scb_h [WRITE] DATA = '{0x0:95, 0x1:122, 0x2:86, 0x3:78, 0x4:99, 0x5:234, 0x8:76, 0x9:150, 0xb:163, 0xc:71, 0xf:32} 
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+sequence4                      apb_transaction  -     @1295                                  
+  name                         string           10    SEQUENCE_4                             
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'hb                                    
+  pwdata                       integral         32    'he7                                   
+  pwrite                       integral         1     'h0                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    127                                    
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_property.sv(58) @ 127: reporter [ASSERTION PASSED for Handshake penable pready] 
+UVM_INFO apb_property.sv(34) @ 127: reporter [ASSERTION PASSED setup_access] 
+UVM_INFO apb_property.sv(46) @ 129: reporter [ASSERTION PASSED access_idle] 
+-----------------------------------------
+Name       Type             Size  Value  
+-----------------------------------------
+txn_h      apb_transaction  -     @1313  
+  name     string           7     MONITOR
+  psel     integral         1     'h0    
+  penable  integral         1     'h0    
+  paddr    integral         32    'hb    
+  pwdata   integral         32    'h0    
+  pwrite   integral         1     'h0    
+  prdata   integral         32    'ha3   
+  pslverr  integral         1     'h0    
+  pready   integral         1     'h0    
+-----------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+sequence4                      apb_transaction  -     @1295                                  
+  name                         string           6     DRIVER                                 
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'hb                                    
+  pwdata                       integral         32    'he7                                   
+  pwrite                       integral         1     'h0                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    127                                    
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_subscriber.sv(55) @ 133: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED] --------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1313     
+  name     string           10    SUBSCRIBER
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'hb       
+  pwdata   integral         32    'h0       
+  pwrite   integral         1     'h0       
+  prdata   integral         32    'ha3      
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+
+UVM_INFO apb_subscriber.sv(56) @ 133: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED IS = ] 92
+--------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1313     
+  name     string           10    SCOREBOARD
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'hb       
+  pwdata   integral         32    'h0       
+  pwrite   integral         1     'h0       
+  prdata   integral         32    'ha3      
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+UVM_INFO apb_scoreboard.sv(51) @ 133: uvm_test_top.env_h.scb_h [Transaction Pass] 
+UVM_INFO apb_scoreboard.sv(43) @ 133: uvm_test_top.env_h.scb_h [WRITE] DATA = '{0x0:95, 0x1:122, 0x2:86, 0x3:78, 0x4:99, 0x5:234, 0x8:76, 0x9:150, 0xc:71, 0xf:32} 
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+sequence4                      apb_transaction  -     @1325                                  
+  name                         string           10    SEQUENCE_4                             
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'hf                                    
+  pwdata                       integral         32    'he                                    
+  pwrite                       integral         1     'h0                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    133                                    
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_property.sv(58) @ 133: reporter [ASSERTION PASSED for Handshake penable pready] 
+UVM_INFO apb_property.sv(34) @ 133: reporter [ASSERTION PASSED setup_access] 
+UVM_INFO apb_property.sv(46) @ 135: reporter [ASSERTION PASSED access_idle] 
+-----------------------------------------
+Name       Type             Size  Value  
+-----------------------------------------
+txn_h      apb_transaction  -     @1343  
+  name     string           7     MONITOR
+  psel     integral         1     'h0    
+  penable  integral         1     'h0    
+  paddr    integral         32    'hf    
+  pwdata   integral         32    'h0    
+  pwrite   integral         1     'h0    
+  prdata   integral         32    'h20   
+  pslverr  integral         1     'h0    
+  pready   integral         1     'h0    
+-----------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+sequence4                      apb_transaction  -     @1325                                  
+  name                         string           6     DRIVER                                 
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'hf                                    
+  pwdata                       integral         32    'he                                    
+  pwrite                       integral         1     'h0                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    133                                    
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_subscriber.sv(55) @ 139: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED] --------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1343     
+  name     string           10    SUBSCRIBER
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'hf       
+  pwdata   integral         32    'h0       
+  pwrite   integral         1     'h0       
+  prdata   integral         32    'h20      
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+
+UVM_INFO apb_subscriber.sv(56) @ 139: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED IS = ] 92
+--------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1343     
+  name     string           10    SCOREBOARD
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'hf       
+  pwdata   integral         32    'h0       
+  pwrite   integral         1     'h0       
+  prdata   integral         32    'h20      
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+UVM_INFO apb_scoreboard.sv(51) @ 139: uvm_test_top.env_h.scb_h [Transaction Pass] 
+UVM_INFO apb_scoreboard.sv(43) @ 139: uvm_test_top.env_h.scb_h [WRITE] DATA = '{0x0:95, 0x1:122, 0x2:86, 0x3:78, 0x4:99, 0x5:234, 0x8:76, 0x9:150, 0xc:71} 
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+sequence4                      apb_transaction  -     @1355                                  
+  name                         string           10    SEQUENCE_4                             
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'h4                                    
+  pwdata                       integral         32    'h86                                   
+  pwrite                       integral         1     'h0                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    139                                    
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_property.sv(58) @ 139: reporter [ASSERTION PASSED for Handshake penable pready] 
+UVM_INFO apb_property.sv(34) @ 139: reporter [ASSERTION PASSED setup_access] 
+UVM_INFO apb_property.sv(46) @ 141: reporter [ASSERTION PASSED access_idle] 
+-----------------------------------------
+Name       Type             Size  Value  
+-----------------------------------------
+txn_h      apb_transaction  -     @1373  
+  name     string           7     MONITOR
+  psel     integral         1     'h0    
+  penable  integral         1     'h0    
+  paddr    integral         32    'h4    
+  pwdata   integral         32    'h0    
+  pwrite   integral         1     'h0    
+  prdata   integral         32    'h63   
+  pslverr  integral         1     'h0    
+  pready   integral         1     'h0    
+-----------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+sequence4                      apb_transaction  -     @1355                                  
+  name                         string           6     DRIVER                                 
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'h4                                    
+  pwdata                       integral         32    'h86                                   
+  pwrite                       integral         1     'h0                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    139                                    
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_subscriber.sv(55) @ 145: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED] --------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1373     
+  name     string           10    SUBSCRIBER
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'h4       
+  pwdata   integral         32    'h0       
+  pwrite   integral         1     'h0       
+  prdata   integral         32    'h63      
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+
+UVM_INFO apb_subscriber.sv(56) @ 145: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED IS = ] 92
+--------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1373     
+  name     string           10    SCOREBOARD
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'h4       
+  pwdata   integral         32    'h0       
+  pwrite   integral         1     'h0       
+  prdata   integral         32    'h63      
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+UVM_INFO apb_scoreboard.sv(51) @ 145: uvm_test_top.env_h.scb_h [Transaction Pass] 
+UVM_INFO apb_scoreboard.sv(43) @ 145: uvm_test_top.env_h.scb_h [WRITE] DATA = '{0x0:95, 0x1:122, 0x2:86, 0x3:78, 0x5:234, 0x8:76, 0x9:150, 0xc:71} 
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+sequence4                      apb_transaction  -     @1385                                  
+  name                         string           10    SEQUENCE_4                             
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'hf                                    
+  pwdata                       integral         32    'h4a                                   
+  pwrite                       integral         1     'h0                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    145                                    
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_property.sv(58) @ 145: reporter [ASSERTION PASSED for Handshake penable pready] 
+UVM_INFO apb_property.sv(34) @ 145: reporter [ASSERTION PASSED setup_access] 
+UVM_INFO apb_property.sv(46) @ 147: reporter [ASSERTION PASSED access_idle] 
+-----------------------------------------
+Name       Type             Size  Value  
+-----------------------------------------
+txn_h      apb_transaction  -     @1403  
+  name     string           7     MONITOR
+  psel     integral         1     'h0    
+  penable  integral         1     'h0    
+  paddr    integral         32    'hf    
+  pwdata   integral         32    'h0    
+  pwrite   integral         1     'h0    
+  prdata   integral         32    'h20   
+  pslverr  integral         1     'h0    
+  pready   integral         1     'h0    
+-----------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+sequence4                      apb_transaction  -     @1385                                  
+  name                         string           6     DRIVER                                 
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'hf                                    
+  pwdata                       integral         32    'h4a                                   
+  pwrite                       integral         1     'h0                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    145                                    
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_subscriber.sv(55) @ 151: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED] --------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1403     
+  name     string           10    SUBSCRIBER
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'hf       
+  pwdata   integral         32    'h0       
+  pwrite   integral         1     'h0       
+  prdata   integral         32    'h20      
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+
+UVM_INFO apb_subscriber.sv(56) @ 151: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED IS = ] 92
+--------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1403     
+  name     string           10    SCOREBOARD
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'hf       
+  pwdata   integral         32    'h0       
+  pwrite   integral         1     'h0       
+  prdata   integral         32    'h20      
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+UVM_INFO apb_scoreboard.sv(55) @ 151: uvm_test_top.env_h.scb_h [Fail -- Reading to Unknown written address] 
+UVM_INFO apb_scoreboard.sv(43) @ 151: uvm_test_top.env_h.scb_h [WRITE] DATA = '{0x0:95, 0x1:122, 0x2:86, 0x3:78, 0x5:234, 0x8:76, 0x9:150, 0xc:71} 
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+sequence4                      apb_transaction  -     @1415                                  
+  name                         string           10    SEQUENCE_4                             
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'hd                                    
+  pwdata                       integral         32    'h4f                                   
+  pwrite                       integral         1     'h0                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    151                                    
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_property.sv(58) @ 151: reporter [ASSERTION PASSED for Handshake penable pready] 
+UVM_INFO apb_property.sv(34) @ 151: reporter [ASSERTION PASSED setup_access] 
+UVM_INFO apb_property.sv(46) @ 153: reporter [ASSERTION PASSED access_idle] 
+-----------------------------------------
+Name       Type             Size  Value  
+-----------------------------------------
+txn_h      apb_transaction  -     @1433  
+  name     string           7     MONITOR
+  psel     integral         1     'h0    
+  penable  integral         1     'h0    
+  paddr    integral         32    'hd    
+  pwdata   integral         32    'h0    
+  pwrite   integral         1     'h0    
+  prdata   integral         32    'hb7   
+  pslverr  integral         1     'h0    
+  pready   integral         1     'h0    
+-----------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+sequence4                      apb_transaction  -     @1415                                  
+  name                         string           6     DRIVER                                 
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'hd                                    
+  pwdata                       integral         32    'h4f                                   
+  pwrite                       integral         1     'h0                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    151                                    
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_subscriber.sv(55) @ 157: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED] --------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1433     
+  name     string           10    SUBSCRIBER
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'hd       
+  pwdata   integral         32    'h0       
+  pwrite   integral         1     'h0       
+  prdata   integral         32    'hb7      
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+
+UVM_INFO apb_subscriber.sv(56) @ 157: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED IS = ] 92
+--------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1433     
+  name     string           10    SCOREBOARD
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'hd       
+  pwdata   integral         32    'h0       
+  pwrite   integral         1     'h0       
+  prdata   integral         32    'hb7      
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+UVM_INFO apb_scoreboard.sv(55) @ 157: uvm_test_top.env_h.scb_h [Fail -- Reading to Unknown written address] 
+UVM_INFO apb_scoreboard.sv(43) @ 157: uvm_test_top.env_h.scb_h [WRITE] DATA = '{0x0:95, 0x1:122, 0x2:86, 0x3:78, 0x5:234, 0x8:76, 0x9:150, 0xc:71} 
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+sequence4                      apb_transaction  -     @1445                                  
+  name                         string           10    SEQUENCE_4                             
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'h8                                    
+  pwdata                       integral         32    'hff                                   
+  pwrite                       integral         1     'h0                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    157                                    
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_property.sv(58) @ 157: reporter [ASSERTION PASSED for Handshake penable pready] 
+UVM_INFO apb_property.sv(34) @ 157: reporter [ASSERTION PASSED setup_access] 
+UVM_INFO apb_property.sv(46) @ 159: reporter [ASSERTION PASSED access_idle] 
+-----------------------------------------
+Name       Type             Size  Value  
+-----------------------------------------
+txn_h      apb_transaction  -     @1463  
+  name     string           7     MONITOR
+  psel     integral         1     'h0    
+  penable  integral         1     'h0    
+  paddr    integral         32    'h8    
+  pwdata   integral         32    'h0    
+  pwrite   integral         1     'h0    
+  prdata   integral         32    'h4c   
+  pslverr  integral         1     'h0    
+  pready   integral         1     'h0    
+-----------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+sequence4                      apb_transaction  -     @1445                                  
+  name                         string           6     DRIVER                                 
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'h8                                    
+  pwdata                       integral         32    'hff                                   
+  pwrite                       integral         1     'h0                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    157                                    
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_subscriber.sv(55) @ 163: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED] --------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1463     
+  name     string           10    SUBSCRIBER
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'h8       
+  pwdata   integral         32    'h0       
+  pwrite   integral         1     'h0       
+  prdata   integral         32    'h4c      
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+
+UVM_INFO apb_subscriber.sv(56) @ 163: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED IS = ] 92
+--------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1463     
+  name     string           10    SCOREBOARD
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'h8       
+  pwdata   integral         32    'h0       
+  pwrite   integral         1     'h0       
+  prdata   integral         32    'h4c      
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+UVM_INFO apb_scoreboard.sv(51) @ 163: uvm_test_top.env_h.scb_h [Transaction Pass] 
+UVM_INFO apb_scoreboard.sv(43) @ 163: uvm_test_top.env_h.scb_h [WRITE] DATA = '{0x0:95, 0x1:122, 0x2:86, 0x3:78, 0x5:234, 0x9:150, 0xc:71} 
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+sequence4                      apb_transaction  -     @1475                                  
+  name                         string           10    SEQUENCE_4                             
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'hc                                    
+  pwdata                       integral         32    'h1f                                   
+  pwrite                       integral         1     'h0                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    163                                    
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_property.sv(58) @ 163: reporter [ASSERTION PASSED for Handshake penable pready] 
+UVM_INFO apb_property.sv(34) @ 163: reporter [ASSERTION PASSED setup_access] 
+UVM_INFO apb_property.sv(46) @ 165: reporter [ASSERTION PASSED access_idle] 
+-----------------------------------------
+Name       Type             Size  Value  
+-----------------------------------------
+txn_h      apb_transaction  -     @1493  
+  name     string           7     MONITOR
+  psel     integral         1     'h0    
+  penable  integral         1     'h0    
+  paddr    integral         32    'hc    
+  pwdata   integral         32    'h0    
+  pwrite   integral         1     'h0    
+  prdata   integral         32    'h47   
+  pslverr  integral         1     'h0    
+  pready   integral         1     'h0    
+-----------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+sequence4                      apb_transaction  -     @1475                                  
+  name                         string           6     DRIVER                                 
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'hc                                    
+  pwdata                       integral         32    'h1f                                   
+  pwrite                       integral         1     'h0                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    163                                    
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_subscriber.sv(55) @ 169: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED] --------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1493     
+  name     string           10    SUBSCRIBER
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'hc       
+  pwdata   integral         32    'h0       
+  pwrite   integral         1     'h0       
+  prdata   integral         32    'h47      
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+
+UVM_INFO apb_subscriber.sv(56) @ 169: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED IS = ] 92
+--------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1493     
+  name     string           10    SCOREBOARD
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'hc       
+  pwdata   integral         32    'h0       
+  pwrite   integral         1     'h0       
+  prdata   integral         32    'h47      
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+UVM_INFO apb_scoreboard.sv(51) @ 169: uvm_test_top.env_h.scb_h [Transaction Pass] 
+UVM_INFO apb_scoreboard.sv(43) @ 169: uvm_test_top.env_h.scb_h [WRITE] DATA = '{0x0:95, 0x1:122, 0x2:86, 0x3:78, 0x5:234, 0x9:150} 
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+sequence4                      apb_transaction  -     @1505                                  
+  name                         string           10    SEQUENCE_4                             
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'hb                                    
+  pwdata                       integral         32    'h11                                   
+  pwrite                       integral         1     'h0                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    169                                    
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_property.sv(58) @ 169: reporter [ASSERTION PASSED for Handshake penable pready] 
+UVM_INFO apb_property.sv(34) @ 169: reporter [ASSERTION PASSED setup_access] 
+UVM_INFO apb_property.sv(46) @ 171: reporter [ASSERTION PASSED access_idle] 
+-----------------------------------------
+Name       Type             Size  Value  
+-----------------------------------------
+txn_h      apb_transaction  -     @1523  
+  name     string           7     MONITOR
+  psel     integral         1     'h0    
+  penable  integral         1     'h0    
+  paddr    integral         32    'hb    
+  pwdata   integral         32    'h0    
+  pwrite   integral         1     'h0    
+  prdata   integral         32    'ha3   
+  pslverr  integral         1     'h0    
+  pready   integral         1     'h0    
+-----------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+sequence4                      apb_transaction  -     @1505                                  
+  name                         string           6     DRIVER                                 
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'hb                                    
+  pwdata                       integral         32    'h11                                   
+  pwrite                       integral         1     'h0                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    169                                    
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_subscriber.sv(55) @ 175: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED] --------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1523     
+  name     string           10    SUBSCRIBER
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'hb       
+  pwdata   integral         32    'h0       
+  pwrite   integral         1     'h0       
+  prdata   integral         32    'ha3      
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+
+UVM_INFO apb_subscriber.sv(56) @ 175: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED IS = ] 92
+--------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1523     
+  name     string           10    SCOREBOARD
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'hb       
+  pwdata   integral         32    'h0       
+  pwrite   integral         1     'h0       
+  prdata   integral         32    'ha3      
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+UVM_INFO apb_scoreboard.sv(55) @ 175: uvm_test_top.env_h.scb_h [Fail -- Reading to Unknown written address] 
+UVM_INFO apb_scoreboard.sv(43) @ 175: uvm_test_top.env_h.scb_h [WRITE] DATA = '{0x0:95, 0x1:122, 0x2:86, 0x3:78, 0x5:234, 0x9:150} 
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+sequence4                      apb_transaction  -     @1535                                  
+  name                         string           10    SEQUENCE_4                             
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'h6                                    
+  pwdata                       integral         32    'he4                                   
+  pwrite                       integral         1     'h0                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    175                                    
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_property.sv(58) @ 175: reporter [ASSERTION PASSED for Handshake penable pready] 
+UVM_INFO apb_property.sv(34) @ 175: reporter [ASSERTION PASSED setup_access] 
+UVM_INFO apb_property.sv(46) @ 177: reporter [ASSERTION PASSED access_idle] 
+-----------------------------------------
+Name       Type             Size  Value  
+-----------------------------------------
+txn_h      apb_transaction  -     @1553  
+  name     string           7     MONITOR
+  psel     integral         1     'h0    
+  penable  integral         1     'h0    
+  paddr    integral         32    'h6    
+  pwdata   integral         32    'h0    
+  pwrite   integral         1     'h0    
+  prdata   integral         32    'he1   
+  pslverr  integral         1     'h0    
+  pready   integral         1     'h0    
+-----------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+sequence4                      apb_transaction  -     @1535                                  
+  name                         string           6     DRIVER                                 
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'h6                                    
+  pwdata                       integral         32    'he4                                   
+  pwrite                       integral         1     'h0                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    175                                    
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_subscriber.sv(55) @ 181: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED] --------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1553     
+  name     string           10    SUBSCRIBER
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'h6       
+  pwdata   integral         32    'h0       
+  pwrite   integral         1     'h0       
+  prdata   integral         32    'he1      
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+
+UVM_INFO apb_subscriber.sv(56) @ 181: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED IS = ] 92
+--------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1553     
+  name     string           10    SCOREBOARD
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'h6       
+  pwdata   integral         32    'h0       
+  pwrite   integral         1     'h0       
+  prdata   integral         32    'he1      
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+UVM_INFO apb_scoreboard.sv(55) @ 181: uvm_test_top.env_h.scb_h [Fail -- Reading to Unknown written address] 
+UVM_INFO apb_scoreboard.sv(43) @ 181: uvm_test_top.env_h.scb_h [WRITE] DATA = '{0x0:95, 0x1:122, 0x2:86, 0x3:78, 0x5:234, 0x9:150} 
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+sequence4                      apb_transaction  -     @1565                                  
+  name                         string           10    SEQUENCE_4                             
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'h2                                    
+  pwdata                       integral         32    'hca                                   
+  pwrite                       integral         1     'h0                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    181                                    
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_property.sv(58) @ 181: reporter [ASSERTION PASSED for Handshake penable pready] 
+UVM_INFO apb_property.sv(34) @ 181: reporter [ASSERTION PASSED setup_access] 
+UVM_INFO apb_property.sv(46) @ 183: reporter [ASSERTION PASSED access_idle] 
+-----------------------------------------
+Name       Type             Size  Value  
+-----------------------------------------
+txn_h      apb_transaction  -     @1583  
+  name     string           7     MONITOR
+  psel     integral         1     'h0    
+  penable  integral         1     'h0    
+  paddr    integral         32    'h2    
+  pwdata   integral         32    'h0    
+  pwrite   integral         1     'h0    
+  prdata   integral         32    'h56   
+  pslverr  integral         1     'h0    
+  pready   integral         1     'h0    
+-----------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+sequence4                      apb_transaction  -     @1565                                  
+  name                         string           6     DRIVER                                 
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'h2                                    
+  pwdata                       integral         32    'hca                                   
+  pwrite                       integral         1     'h0                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    181                                    
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_subscriber.sv(55) @ 187: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED] --------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1583     
+  name     string           10    SUBSCRIBER
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'h2       
+  pwdata   integral         32    'h0       
+  pwrite   integral         1     'h0       
+  prdata   integral         32    'h56      
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+
+UVM_INFO apb_subscriber.sv(56) @ 187: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED IS = ] 92
+--------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1583     
+  name     string           10    SCOREBOARD
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'h2       
+  pwdata   integral         32    'h0       
+  pwrite   integral         1     'h0       
+  prdata   integral         32    'h56      
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+UVM_INFO apb_scoreboard.sv(51) @ 187: uvm_test_top.env_h.scb_h [Transaction Pass] 
+UVM_INFO apb_scoreboard.sv(43) @ 187: uvm_test_top.env_h.scb_h [WRITE] DATA = '{0x0:95, 0x1:122, 0x3:78, 0x5:234, 0x9:150} 
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+sequence4                      apb_transaction  -     @1595                                  
+  name                         string           10    SEQUENCE_4                             
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'h0                                    
+  pwdata                       integral         32    'hf5                                   
+  pwrite                       integral         1     'h0                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    187                                    
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_property.sv(58) @ 187: reporter [ASSERTION PASSED for Handshake penable pready] 
+UVM_INFO apb_property.sv(34) @ 187: reporter [ASSERTION PASSED setup_access] 
+UVM_INFO apb_property.sv(46) @ 189: reporter [ASSERTION PASSED access_idle] 
+-----------------------------------------
+Name       Type             Size  Value  
+-----------------------------------------
+txn_h      apb_transaction  -     @1613  
+  name     string           7     MONITOR
+  psel     integral         1     'h0    
+  penable  integral         1     'h0    
+  paddr    integral         32    'h0    
+  pwdata   integral         32    'h0    
+  pwrite   integral         1     'h0    
+  prdata   integral         32    'h5f   
+  pslverr  integral         1     'h0    
+  pready   integral         1     'h0    
+-----------------------------------------
+---------------------------------------------------------------------------------------------
+Name                           Type             Size  Value                                  
+---------------------------------------------------------------------------------------------
+sequence4                      apb_transaction  -     @1595                                  
+  name                         string           6     DRIVER                                 
+  psel                         integral         1     'h0                                    
+  penable                      integral         1     'h0                                    
+  paddr                        integral         32    'h0                                    
+  pwdata                       integral         32    'hf5                                   
+  pwrite                       integral         1     'h0                                    
+  prdata                       integral         32    'h0                                    
+  pslverr                      integral         1     'h0                                    
+  pready                       integral         1     'h0                                    
+  begin_time                   time             64    187                                    
+  depth                        int              32    'd2                                    
+  parent sequence (name)       string           6     seq_4h                                 
+  parent sequence (full name)  string           39    uvm_test_top.env_h.agnt_h.sequ_h.seq_4h
+  sequencer                    string           32    uvm_test_top.env_h.agnt_h.sequ_h       
+---------------------------------------------------------------------------------------------
+UVM_INFO apb_subscriber.sv(55) @ 193: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED] --------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1613     
+  name     string           10    SUBSCRIBER
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'h0       
+  pwdata   integral         32    'h0       
+  pwrite   integral         1     'h0       
+  prdata   integral         32    'h5f      
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+
+UVM_INFO apb_subscriber.sv(56) @ 193: uvm_test_top.env_h.cov_h [COVERAGE CALCULATED IS = ] 92
+--------------------------------------------
+Name       Type             Size  Value     
+--------------------------------------------
+txn_h      apb_transaction  -     @1613     
+  name     string           10    SCOREBOARD
+  psel     integral         1     'h0       
+  penable  integral         1     'h0       
+  paddr    integral         32    'h0       
+  pwdata   integral         32    'h0       
+  pwrite   integral         1     'h0       
+  prdata   integral         32    'h5f      
+  pslverr  integral         1     'h0       
+  pready   integral         1     'h0       
+--------------------------------------------
+UVM_INFO apb_scoreboard.sv(51) @ 193: uvm_test_top.env_h.scb_h [Transaction Pass] 
+UVM_INFO apb_scoreboard.sv(43) @ 193: uvm_test_top.env_h.scb_h [WRITE] DATA = '{0x1:122, 0x3:78, 0x5:234, 0x9:150} 
+UVM_INFO /apps/vcsmx/vcs/U-2023.03-SP2//etc/uvm-1.2/src/base/uvm_objection.svh(1276) @ 193: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO /apps/vcsmx/vcs/U-2023.03-SP2//etc/uvm-1.2/src/base/uvm_report_server.svh(904) @ 193: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :  209
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[ASSERTION PASSED access_idle]    31
+[ASSERTION PASSED for Handshake penable pready]    31
+[ASSERTION PASSED setup_access]    31
+[Agent]     2
+[Base Test]     1
+[COVERAGE CALCULATED]    32
+[COVERAGE CALCULATED IS = ]    32
+[DRIVER RESET]     1
+[Driver]     3
+[Environment]     2
+[Fail -- Reading to Unknown written address]     4
+[Monitor]     3
+[RNTST]     1
+[Scoreboard]     2
+[Sequencer]     1
+[TEST_DONE]     1
+[Test Case 4 Started]     1
+[Transaction Pass]    12
+[UVM/RELNOTES]     1
+[UVMTOP]     1
+[WRITE]    16
+
+$finish called from file "/apps/vcsmx/vcs/U-2023.03-SP2//etc/uvm-1.2/src/base/uvm_root.svh", line 527.
+$finish at simulation time                  193
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 193 ns
+CPU Time:      0.480 seconds;       Data structure size:   0.3Mb
+Tue Feb  4 01:19:52 2025
